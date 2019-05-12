@@ -1,0 +1,26 @@
+#navBar {
+    background-color: #0a1612;
+    color: white;
+    font-size: 150%;
+    height: 10vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 6fr;
+    
+    /* align-items: center;
+    justify-items: center; */
+}
+a{
+    color: white;
+}
+
+#navBar>div {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+#navBar>div:hover {
+    background-color: #1c2e28;
+}

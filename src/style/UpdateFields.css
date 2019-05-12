@@ -1,0 +1,23 @@
+
+.updateFields{
+    position: fixed;
+    display: fixed;
+    background-color: rgb(27, 26, 26);
+    color: white;
+    
+}
+
+.fas{
+    cursor: pointer;
+}
+
+.updateForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.updateForm>input {
+    background-color: transparent;
+    border-bottom: 1px solid white;
+}

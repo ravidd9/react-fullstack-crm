@@ -1,0 +1,13 @@
+
+
+#clientsFields{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #F7CE3E;
+    padding: 2%;
+    border: 1px solid black;
+    font-weight: bold;
+
+}

@@ -1,0 +1,26 @@
+
+#updateClient{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 40vw;
+    justify-items: left;
+    margin: 2%;
+}
+
+#updateClient>div{
+    margin: 10px;
+}
+
+#updateClient>select{
+    margin:10px;
+    width: 70%;
+}
+
+#updateClient>button{
+    background-color: transparent;
+    color: rgb(165, 165, 39);
+    height: 70%;
+    border: 0px;
+    font-weight: bold;
+    font-size: 120%;
+}
