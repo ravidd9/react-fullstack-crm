@@ -1,0 +1,30 @@
+
+#addClient{
+
+}
+
+#addClientForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 20vw;
+    justify-items: left;
+    margin: 2%;
+}
+
+#addClientForm>div{
+    margin: 10px;
+}
+
+#addClientForm>input{
+    margin:10px;
+    width: 70%;
+}
+
+#addClient>button{
+    background-color: yellow;
+    height: 8vh;
+    border: 1px solid black;;
+    font-size: 120%;
+    width: 20vw;
+    margin-left: 2%;
+}

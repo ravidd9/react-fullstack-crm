@@ -32,6 +32,7 @@ class Actions extends Component {
                 <h2>UPDATE</h2>
                 <ClientInput clients={this.state.clients} />
                 <UpdateClient />
+                <hr></hr>
                 <AddClient />
             </div>
         );
