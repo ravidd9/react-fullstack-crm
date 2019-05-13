@@ -1,0 +1,7 @@
+
+#allBadges{
+    display: grid;
+    width: 90vw;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 5%;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style/ClientInput.css';
+import '../../style/ClientInput.css';
 
 
 class ClientInput extends Component {

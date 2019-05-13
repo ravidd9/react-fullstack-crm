@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style/AddClient.css';
+import '../../style/AddClient.css';
 import axios from 'axios'
 
 

@@ -4,9 +4,9 @@ import './App.css';
 import axios from 'axios'
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Clients from './components/Clients';
-import Actions from './components/Actions';
-import Analytics from './components/Analytics';
+import Clients from './components/Clients/Clients';
+import Actions from './components/Actions/Actions';
+import Analytics from './components/Analytics/Analytics';
 
 
 

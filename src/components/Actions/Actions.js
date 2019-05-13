@@ -3,7 +3,7 @@ import ClientInput from './ClientInput';
 import UpdateClient from './UpdateClient';
 import AddClient from './AddClient';
 import axios from 'axios'
-import '../style/Actions.css';
+import '../../style/Actions.css';
 
 
 

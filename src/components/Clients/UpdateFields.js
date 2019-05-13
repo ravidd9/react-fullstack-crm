@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import '../style/UpdateFields.css';
+import '../../style/UpdateFields.css';
 
 
 class UpdateFields extends Component {
@@ -15,9 +15,10 @@ class UpdateFields extends Component {
 
     saveUpdate = async () => {
         let client = this.props.client
-        client.name = this.state.name + " " + this.state.surename
+        client.name = this.state.name + " " + this.state.surname
         client.country = this.state.country
-        await axios.put(`http://localhost:8000/client`, client)
+        console.log(client)
+        await axios.put(`http://localhost:8000/client/${client._id}`, client)
         this.changeUpdateState()
 
     }
@@ -32,9 +33,7 @@ class UpdateFields extends Component {
 
     changeInputValue = event => this.setState({ [event.target.name]: event.target.value })
 
-    changeUpdateState = () => {
-        this.props.changeUpdateState()
-    }
+    changeUpdateState = () => this.props.changeUpdateState()
 
     render() {
         return (

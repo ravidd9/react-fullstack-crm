@@ -1,0 +1,48 @@
+
+.badge{
+    display: grid;
+    grid-template-areas: 
+    "i n n"
+    "i t t";
+    justify-items: left;
+    align-items: center;
+}
+
+
+
+.badge>.icon{
+    grid-area: i;
+    justify-self: right;
+    margin-right: 20px;
+    border-radius: 100px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.badge>.icon>i{
+    font-size: 440%;
+    color: white;
+}
+
+.badge>.value{
+    font-size: 240%;
+    grid-area: n;
+}
+
+.badge>.text{
+    font-size: 130%;
+    grid-area: t;
+}
+
+.badge>.red{
+    background-color: #E74C3C;
+}
+.badge>.blue{
+    background-color: #3498DB;
+}
+.badge>.yellow{
+    background-color: #F1C40F;
+}
+.badge>.green{
+    background-color: #2ECC71;
+}

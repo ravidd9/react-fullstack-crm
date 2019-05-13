@@ -5,18 +5,6 @@ const Client = require('../models/Client')
 
 const getClients = async () => Client.find({})
 
-const createClient = reqClient =>{
-    const newClient = new Client({
-        name: reqClient.name,
-        email: reqClient.email,
-        firstContact: reqClient.firstContact,
-        emailType: reqClient.emailType,
-        sold: reqClient.sold,
-        owner: reqClient.owner,
-        country: reqClient.country
-    })
-    return newClient
-}
 
 router.get('/sanity', function (req, res) {
     res.send('OK!')
@@ -31,8 +19,8 @@ router.put('/owner/:id/:owner', function (req, res) {
     const id = req.params.id
     const owner = req.params.owner
 
-    let update = Client.findOneAndUpdate({_id: id}, {owner: owner})
-    update.then(function(client){
+    let update = Client.findOneAndUpdate({ _id: id }, { owner: owner })
+    update.then(function (client) {
         res.send("Client's owner has updated to " + owner)
     })
 })
@@ -41,23 +29,30 @@ router.put('/emailType/:id/:emailType', function (req, res) {
     const id = req.params.id
     const emailType = req.params.emailType
 
-    let update = Client.findOneAndUpdate({_id: id}, {emailType: emailType})
-    update.then(function(client){
+    let update = Client.findOneAndUpdate({ _id: id }, { emailType: emailType })
+    update.then(function (client) {
         res.send("Client's email type has updated to " + emailType)
     })
 })
 
-router.put('/client', function (req, res) {
-    const newClient = createClient(req.body)
+router.put('/declare/:id', function (req, res) {
+    const id = req.params.id
 
-    let update = Client.findOneAndUpdate({_id: newClient._id}, {name: newClient.name, country: newClient.country})
-    update.then(function(client){
-        res.send("Client has updated")
+    let update = Client.findOneAndUpdate({ _id: id }, { sold: true })
+    update.then(function (client) {
+        res.send("sold!")
     })
 })
 
+router.put('/client/:id', async function (req, res) {
+    const { name, country } = req.body
+    const id = req.params.id
+    let update = await Client.findOneAndUpdate({ _id: id }, { name, country })
+    res.send("Client has updated")
+})
+
 router.post('/client', function (req, res) {
-    const newClient = createClient(req.body)
+    const newClient = new Client(req.body)
 
     let save = newClient.save()
     save.then(function (client) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style/MovePages.css';
+import '../../style/MovePages.css';
 
 
 class MovePages extends Component {

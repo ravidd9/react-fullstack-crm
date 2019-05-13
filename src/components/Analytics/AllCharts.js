@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Analytics extends Component {
+class AllCharts extends Component {
     render() {
         return (
             <div>
-                Analytics
+                
             </div>
         );
     }
 }
 
-export default Analytics;
+export default AllCharts;

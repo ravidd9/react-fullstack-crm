@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style/ClientRow.css';
+import '../../style/ClientRow.css';
 import UpdateFields from './UpdateFields';
 
 
