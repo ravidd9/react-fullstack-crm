@@ -47,6 +47,15 @@ router.put('/emailType/:id/:emailType', function (req, res) {
     })
 })
 
+router.put('/client', function (req, res) {
+    const newClient = createClient(req.body)
+
+    let update = Client.findOneAndUpdate({_id: newClient._id}, {name: newClient.name, country: newClient.country})
+    update.then(function(client){
+        res.send("Client has updated")
+    })
+})
+
 router.post('/client', function (req, res) {
     const newClient = createClient(req.body)
 

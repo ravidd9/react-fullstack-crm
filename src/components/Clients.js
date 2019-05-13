@@ -22,15 +22,9 @@ class Clients extends Component {
         } else if (!increase && this.state.viewCount >= 21) {
             this.setState({ viewCount: this.state.viewCount - 20 })
         }
-
     }
 
-    saveValues = (input, select) => {
-        console.log(input)
-        console.log(select)
-        this.setState({ input, select , viewCount: 1})
-        
-    }
+    saveValues = (input, select) => this.setState({ input, select , viewCount: 1})
 
     getClients = async () => {
         let clients = await axios.get('http://localhost:8000/clients')

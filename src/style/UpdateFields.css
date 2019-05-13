@@ -1,23 +1,52 @@
 
 .updateFields{
     position: fixed;
-    display: fixed;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     background-color: rgb(27, 26, 26);
     color: white;
+    border-radius: 20px;
     
 }
 
-.fas{
+.updateFields>i{
     cursor: pointer;
+    margin-top: 2%;
+    margin-left: 2%;
+    font-size: 200%;
 }
 
 .updateForm{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    margin: 5%;
+}
+
+.updateForm>span{
+    font-size: 150%;
+    font-weight: bold;
+    margin: 10%;
 }
 
 .updateForm>input {
+    align-self: center;
+    width: 80%;
+    font-size: 150%;
     background-color: transparent;
+    border: 0px;
+    color: white;
     border-bottom: 1px solid white;
+}
+
+.updateFields>button{
+    font-size: 200%;
+    padding: 2%;
+    width: 30%;
+    border-radius: 25px;
+    margin-left: 35%;
 }

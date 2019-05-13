@@ -14,8 +14,6 @@ class SearchClients extends Component {
     saveValues = () => this.props.saveValues(this.state.input.toLowerCase(), this.state.select)
 
     changeValue = async (event) =>{
-        console.log([event.target.name])
-        console.log(event.target.value)
         await this.setState({ [event.target.name]: event.target.value })
         this.saveValues() 
     }

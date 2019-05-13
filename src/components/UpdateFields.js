@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import '../style/UpdateFields.css';
 
 
 class UpdateFields extends Component {
@@ -7,7 +8,7 @@ class UpdateFields extends Component {
         super()
         this.state = {
             name: "",
-            surename: "",
+            surname: "",
             country: ""
         }
     }
@@ -16,30 +17,38 @@ class UpdateFields extends Component {
         let client = this.props.client
         client.name = this.state.name + " " + this.state.surename
         client.country = this.state.country
-        await axios.put(`http://localhost:8000/client/${client._id}`, client)
-        
+        await axios.put(`http://localhost:8000/client`, client)
+        this.changeUpdateState()
+
     }
 
-    changeInputValue = event => this.setState({ [event.target.id]: event.target.value })
+    componentDidMount =() =>{
+        this.setState({
+            name: this.props.client.name.split(' ')[0],
+            surname: this.props.client.name.split(' ')[1],
+            country: this.props.client.country
+        })
+    }
+
+    changeInputValue = event => this.setState({ [event.target.name]: event.target.value })
 
     changeUpdateState = () => {
         this.props.changeUpdateState()
     }
 
     render() {
-        console.log(this.props.client)
         return (
             <div className="updateFields">
-                <i className="fas fa-times-circle" onClick={this.changeUpdateState}></i>
-                <div className="updateForm">
-                    <span>Name: </span>
-                    <input id="name" value={this.props.client.name.split(' ')[0]} onChange={this.changeInputValue} type="text" />
-                    <span>Surename: </span>
-                    <input id="surename" value={this.props.client.name.split(' ')[1]} onChange={this.changeInputValue} type="text" />
-                    <span>Country: </span>
-                    <input id="country" value={this.props.client.country} onChange={this.changeInputValue} type="text" />
-                </div>
-                <button onClick={this.saveUpdate}>Update</button>
+                    <i className="fas fa-times-circle" onClick={this.changeUpdateState}></i>
+                    <div className="updateForm">
+                        <span>Name: </span>
+                        <input name="name" value={this.state.name} onChange={this.changeInputValue} type="text" />
+                        <span>Surname: </span>
+                        <input name="surname" value={this.state.surname} onChange={this.changeInputValue} type="text" />
+                        <span>Country: </span>
+                        <input name="country" value={this.state.country} onChange={this.changeInputValue} type="text" />
+                    </div>
+                    <button onClick={this.saveUpdate}>Update</button>
             </div>
         );
     }
