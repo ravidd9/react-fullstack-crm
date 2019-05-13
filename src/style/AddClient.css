@@ -1,30 +1,34 @@
+#addClient {}
 
-#addClient{
-
-}
-
-#addClientForm{
+#addClientForm {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 20vw;
+    width: 30vw;
     justify-items: left;
     margin: 2%;
 }
 
-#addClientForm>div{
+#addClientForm>div {
     margin: 10px;
 }
 
-#addClientForm>input{
-    margin:10px;
+#addClientForm>input {
+    margin: 10px;
     width: 70%;
 }
 
-#addClient>button{
+#addClient>button {
     background-color: yellow;
     height: 8vh;
-    border: 1px solid black;;
+    border: 1px solid black;
     font-size: 120%;
     width: 20vw;
     margin-left: 2%;
+    cursor: pointer;
+}
+
+#saved {
+    margin-left: 2%;
+    color: red;
+    font-size: 120%;
 }

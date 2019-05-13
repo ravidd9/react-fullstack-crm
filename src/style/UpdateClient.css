@@ -1,8 +1,8 @@
 
 #updateClient{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 40vw;
+    grid-template-columns: repeat(4 , 1fr);
+    width: 60vw;
     justify-items: left;
     margin: 2%;
 }
@@ -13,6 +13,7 @@
 
 #updateClient>select{
     margin:10px;
+    color: black;
     width: 70%;
 }
 
@@ -24,3 +25,9 @@
     font-weight: bold;
     font-size: 120%;
 }
+
+.message{
+    color: red;
+    font-size: 120%;
+}
+

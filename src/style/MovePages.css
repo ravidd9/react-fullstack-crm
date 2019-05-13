@@ -1,0 +1,12 @@
+
+#movePages{
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    font-size: 20px;
+}
+
+#movePages>i{
+    cursor: pointer;
+    margin: 10px;
+}

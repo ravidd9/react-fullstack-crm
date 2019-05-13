@@ -5,6 +5,19 @@ const Client = require('../models/Client')
 
 const getClients = async () => Client.find({})
 
+const createClient = reqClient =>{
+    const newClient = new Client({
+        name: reqClient.name,
+        email: reqClient.email,
+        firstContact: reqClient.firstContact,
+        emailType: reqClient.emailType,
+        sold: reqClient.sold,
+        owner: reqClient.owner,
+        country: reqClient.country
+    })
+    return newClient
+}
+
 router.get('/sanity', function (req, res) {
     res.send('OK!')
 })
@@ -14,23 +27,28 @@ router.get('/clients', async function (req, res) {
     res.send(clients)
 })
 
-router.put('/client/:id', async function (req, res) {
-    
+router.put('/owner/:id/:owner', function (req, res) {
+    const id = req.params.id
+    const owner = req.params.owner
+
+    let update = Client.findOneAndUpdate({_id: id}, {owner: owner})
+    update.then(function(client){
+        res.send("Client's owner has updated to " + owner)
+    })
+})
+
+router.put('/emailType/:id/:emailType', function (req, res) {
+    const id = req.params.id
+    const emailType = req.params.emailType
+
+    let update = Client.findOneAndUpdate({_id: id}, {emailType: emailType})
+    update.then(function(client){
+        res.send("Client's email type has updated to " + emailType)
+    })
 })
 
 router.post('/client', function (req, res) {
-    const reqClient = req.body
-
-    const newClient = new Client({
-        name: reqClient.name,
-        email: reqClient.email,
-        firstContact: reqClient.firstContact,
-        emailType: reqClient.emailType,
-        sold: reqClient.sold,
-        owner: reqClient.owner,
-        country: reqClient.country
-
-    })
+    const newClient = createClient(req.body)
 
     let save = newClient.save()
     save.then(function (client) {

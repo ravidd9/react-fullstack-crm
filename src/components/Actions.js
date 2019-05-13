@@ -11,8 +11,13 @@ class Actions extends Component {
     constructor(){
         super()
         this.state = {
-            clients: []
+            clients: [],
+            name: ""
         }
+    }
+
+    saveName = name =>{
+        this.setState({name})
     }
 
     getClients = async () => {
@@ -30,8 +35,8 @@ class Actions extends Component {
         return (
             <div id="actions">
                 <h2>UPDATE</h2>
-                <ClientInput clients={this.state.clients} />
-                <UpdateClient />
+                <ClientInput clients={this.state.clients} saveName={this.saveName} />
+                <UpdateClient clients={this.state.clients} name={this.state.name} />
                 <hr></hr>
                 <AddClient />
             </div>

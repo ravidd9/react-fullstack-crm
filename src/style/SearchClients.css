@@ -2,3 +2,19 @@
 #searchClients{
     margin: 5%;
 }
+
+#searchClients>input{
+    font-size: 25px;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid black;
+    margin-right: 20px;
+}
+
+#searchClients>select{
+    font-size: 25px;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid black;
+    margin-right: 20px;
+}

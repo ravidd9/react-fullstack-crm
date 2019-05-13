@@ -23,7 +23,7 @@ class ClientRow extends Component {
                     <div>{client.name.split(' ')[0]}</div>
                     <div>{client.name.split(' ')[1]}</div>
                     <div>{client.country}</div>
-                    <div>{date.getDate()}/{date.getMonth()}/{date.getYear()}</div>
+                    <div>{date.getDate()}/{Number(date.getMonth())+1}/{date.getFullYear()}</div>
                     <div>{client.emailType}</div>
                     <div>{client.sold ? <i className="fas fa-check"></i> : "-"}</div>
                     <div>{client.owner}</div>
