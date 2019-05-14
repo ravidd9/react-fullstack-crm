@@ -10,15 +10,15 @@
     /* align-items: center;
     justify-items: center; */
 }
-a{
+#navBar>a{
     color: white;
+    justify-self: center;
+    align-self: center;
 }
 
 #navBar>div {
     height: 100%;
     width: 100%;
-    justify-content: center;
-    align-content: center;
 }
 
 #navBar>div:hover {

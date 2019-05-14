@@ -1,12 +1,13 @@
 
 #clientAcquisitionChart{
-    display: inline;
+    display: inline-block;
     margin-left: 5%;
     grid-area: d;
 }
 
 #clientAcquisitionChart>.title{
     font-weight: bold;
-    margin-left: 10%;
     font-size: 140%;
+    margin-bottom: 3%;
 }
+

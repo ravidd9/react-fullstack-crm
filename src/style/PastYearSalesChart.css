@@ -1,11 +1,13 @@
 
 #pastYearSalesChart{
-    display: inline;
+    display: inline-block;
+    /* width: 100%; */
     margin-left: 5%;
     grid-area: c;
 }
 
 #pastYearSalesChart>.title{
+    display: inline-block;
     font-weight: bold;
     margin-left: 10%;
     font-size: 140%;

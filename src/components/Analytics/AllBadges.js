@@ -4,12 +4,6 @@ import '../../style/AllBadges.css';
 
 
 class AllBadges extends Component {
-    constructor() {
-        super()
-        this.state = {
-
-        }
-    }
 
     generateBadges = () => {
         let badges = {
