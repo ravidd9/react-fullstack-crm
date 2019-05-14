@@ -1,12 +1,22 @@
-
-#salesByCountryChart{
+#salesByCountryChart {
     display: inline;
     margin-left: 5%;
     grid-area: b;
 }
 
-#salesByCountryChart>.title{
+#salesByCountryChart>.title {
     font-weight: bold;
     margin-left: 10%;
     font-size: 140%;
+}
+
+.title>select {
+    background-color: transparent;
+    font-size: 100%;
+    font-weight: bold;
+    margin-left: 5px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    font-family: 'Montserrat', sans-serif;
+
 }
