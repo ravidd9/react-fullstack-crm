@@ -1,0 +1,12 @@
+
+#topEmployeesChart{
+    display: inline-block;
+    grid-area: a;
+    margin-left: 10%;
+}
+
+#topEmployeesChart>.title{
+    font-weight: bold;
+    margin-left: 10%;
+    font-size: 140%;
+}
