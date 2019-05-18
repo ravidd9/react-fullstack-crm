@@ -25,7 +25,7 @@ class TopEmployeesChart extends Component {
         owners.forEach(owner => employees.push({name: owner, sales: 0}))
         this.props.clients.forEach(c => {
             for(let i in employees){
-                if(employees[i].name == c.owner){
+                if(employees[i].name === c.owner){
                     employees[i].sales ++
                 }
             }

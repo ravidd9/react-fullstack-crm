@@ -17,7 +17,7 @@ class Clients extends Component {
     }
 
     handleViewCount = (increase) => {
-        if (increase && this.state.viewCount <= 701) {
+        if (increase && this.state.viewCount < this.state.clients.length) {
             this.setState({ viewCount: this.state.viewCount + 20 })
         } else if (!increase && this.state.viewCount >= 21) {
             this.setState({ viewCount: this.state.viewCount - 20 })
@@ -30,7 +30,7 @@ class Clients extends Component {
         let clients = await axios.get('http://localhost:8000/clients')
         return clients.data
     }
-
+ 
     componentDidMount = async () => {
         let clients = await this.getClients()
         this.setState({ clients })
@@ -45,16 +45,17 @@ class Clients extends Component {
     // }
 
     render() {
+        let viewCount = this.state.viewCount
         return (
             <div>
                 <SearchClients saveValues={this.saveValues} />
-                <MovePages viewCount={this.state.viewCount} handleViewCount={this.handleViewCount} />
+                <MovePages viewCount={viewCount} handleViewCount={this.handleViewCount} />
                 <ClientsFields />
                 {this.state.input ?
                     this.state.clients.filter(c => c[this.state.select].toLowerCase().includes(this.state.input))
-                        .splice(this.state.viewCount - 1, 20)
+                        .slice(viewCount - 1, viewCount + 19)
                         .map((client, i) => <ClientRow key={i} client={client} />) :
-                    this.state.clients.splice(this.state.viewCount - 1, 20).map((client, i) => <ClientRow key={i} client={client} />)}
+                    this.state.clients.slice(viewCount - 1, viewCount + 19).map((client, i) => <ClientRow key={i} client={client} />)}
             </div>
         );
     }

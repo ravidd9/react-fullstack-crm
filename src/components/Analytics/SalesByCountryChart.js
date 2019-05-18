@@ -13,7 +13,7 @@ class SalesByCountryChart extends Component {
 
     changeValue = event => this.setState({ [event.target.name]: event.target.value })
 
-    getFullMonth = (date = new Date()) => new Intl.DateTimeFormat('en-US', { month: "long" }).format(date)
+    getFullMonth = (date = new Date()) => new Intl.DateTimeFormat('en-US', { month: "long" }).format(date).slice(0, 3)
 
     getDataSet = (key) => {
         let AllData = new Set()
