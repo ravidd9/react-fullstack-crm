@@ -1,9 +1,9 @@
 
 #pastYearSalesChart{
     display: inline-block;
-    /* width: 100%; */
     margin-left: 5%;
     grid-area: c;
+    height: 100%;
 }
 
 #pastYearSalesChart>.title{

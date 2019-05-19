@@ -1,7 +1,8 @@
 #salesByCountryChart {
-    display: inline;
+    display: inline-block;
     margin-left: 5%;
     grid-area: b;
+    height: 100%;
 }
 
 #salesByCountryChart>.title {

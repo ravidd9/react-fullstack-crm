@@ -1,5 +1,5 @@
 import React, { Component, PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 import '../../style/SalesByCountryChart.css';
 
 
@@ -54,22 +54,22 @@ class SalesByCountryChart extends Component {
                         <option value="month">Month</option>
                     </select>
                 </div>
-                <BarChart
-                    width={1100}
-                    height={250}
-                    data={data}
-                    margin={{
-                        top: 5, right: 30, left: 20, bottom: 5,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis dataKey="sales" />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="sales" fill="green" />
-                </BarChart>
+                <ResponsiveContainer width="100%" height="90%">
 
+                    <BarChart
+                        data={data}
+                        margin={{
+                            top: 5, right: 30, left: 20, bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis dataKey="sales" />
+                        <Tooltip />
+                        <Legend />
+                        <Bar dataKey="sales" fill="green" />
+                    </BarChart>
+                </ResponsiveContainer>
             </div>
         );
     }

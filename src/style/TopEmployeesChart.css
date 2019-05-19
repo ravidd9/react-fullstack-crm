@@ -3,6 +3,8 @@
     display: inline-block;
     grid-area: a;
     margin-left: 10%;
+    height: 100%;
+
 }
 
 #topEmployeesChart>.title{

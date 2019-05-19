@@ -39,7 +39,7 @@ class TopEmployeesChart extends Component {
         return (
             <div id="topEmployeesChart">
                     <div className="title">Top Employees</div>
-                {/* <ResponsiveContainer width="100%" height="80%"> */}
+                    
                     <ComposedChart
                         layout="vertical"
                         width={500}
