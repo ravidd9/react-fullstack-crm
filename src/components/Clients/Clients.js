@@ -33,7 +33,7 @@ class Clients extends Component {
     getFilteredClients = (input, select) => this.state.clients.filter(c => c[select].toLowerCase().includes(input))
 
     getClients = async () => {
-        let clients = await axios.get('http://localhost:8000/clients')
+        let clients = await axios.get('/clients')
         return clients.data
     }
 
