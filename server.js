@@ -5,6 +5,9 @@ const bodyParser = require('body-parser')
 const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 
+app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crmDB", {
     useNewUrlParser: true
 }, function (err) {
@@ -20,7 +23,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: false
 }))
-app.use(express.static(path.join(__dirname, 'build')));
+
 
 // app.use(function (req, res, next) {
 //     res.header('Access-Control-Allow-Origin', '*')
