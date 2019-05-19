@@ -15,7 +15,7 @@ class Analytics extends Component {
     }
 
     getClients = async () => {
-        let clients = await axios.get('http://localhost:8000/clients')
+        let clients = await axios.get('/clients')
         return clients.data
     }
 

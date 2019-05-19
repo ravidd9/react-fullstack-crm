@@ -18,19 +18,19 @@ class UpdateClient extends Component {
 
     transferOwner = async () => {
         let client = this.props.clients.find(c => c.name === this.props.name)
-        await axios.put(`http://localhost:8000/owner/${client._id}/${this.state.owner}`)
+        await axios.put(`/owner/${client._id}/${this.state.owner}`)
         this.setState({ changedOwner: true })
     }
 
     sendEmail = async () => {
         let client = this.props.clients.find(c => c.name === this.props.name)
-        await axios.put(`http://localhost:8000/emailType/${client._id}/${this.state.emailType}`)
+        await axios.put(`/emailType/${client._id}/${this.state.emailType}`)
         this.setState({ sentEmail: true })
     }
 
     sell = async () => {
         let client = this.props.clients.find(c => c.name === this.props.name)
-        await axios.put(`http://localhost:8000/declare/${client._id}`)
+        await axios.put(`/declare/${client._id}`)
         this.setState({ declare: true })
     }
 

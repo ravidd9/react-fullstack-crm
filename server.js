@@ -5,12 +5,21 @@ const bodyParser = require('body-parser')
 const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crmDB", { useNewUrlParser: true })
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crmDB", {
+    useNewUrlParser: true
+}, function (err) {
+    if (!err) {
+        console.log('success')
+    } else {
+        console.log(err)
+    }
+})
 
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 // app.use(function (req, res, next) {
 //     res.header('Access-Control-Allow-Origin', '*')
 //     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
